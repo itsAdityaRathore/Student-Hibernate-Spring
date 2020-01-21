@@ -1,0 +1,21 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="Student_details">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>com.hibernate.studentHibernate.Student</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!-- Select our SQL dialect -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <!-- Drop and re-create the database schema on startup -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.jdbc.lob.non_contextual_creation" value="true"/>
+            <!-- Postgres Database connection settings -->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="root"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>
